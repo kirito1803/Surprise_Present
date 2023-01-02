@@ -1,0 +1,565 @@
+/* Reset all format */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+/* End reset */
+
+/* Canvas format */
+#canvas {
+    /* z-index: 9000; */
+    position: fixed;
+}
+/* End Canvas format */
+
+/* Begin common formats */
+.content-inline-pad {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.content-block-pad {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.elements-inline-margin {
+    margin: 35px 60px;
+}
+
+.centerItem {
+    display: flex;
+    margin: auto;
+}
+
+.hcenterText {
+    text-align: center;
+}
+
+.vcenterText {
+    margin-block: auto;
+}
+
+.picSet-border {
+    /* width: 1020px; */
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row-2 {
+    position: relative;   
+    float: left;
+    width: 100%;
+    height: 50%;
+}
+
+.col-2 {
+    position: relative; 
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.col-3 {
+    position: relative; 
+    float: left;
+    width: 33.33%;
+    height: 100%;
+}
+
+.col-4 {
+    position: relative; 
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.pic-margin {
+    margin: 12px;
+}
+
+.glow {
+    text-shadow: 0 0 8px #F56EB3;
+}
+/* End common formats */
+
+/* Begin common elements */
+@font-face {
+    font-family: 'DancingLine';
+    src: url('./source/FREESCPT.TTF');
+}
+
+@font-face {
+    font-family: 'Brush';
+    src: url("./source/BRUSHSCI.TTF");
+}
+
+.zoom {
+    transition: transform .2s;
+}
+  
+.zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.2); 
+    z-index: 20;
+}
+
+.bridge {
+    height: 500px;
+    width: 100%;
+}
+
+.ribbon {
+    height: 300px;
+    background-color: #ccc;
+}
+/* End common elements */
+
+/* Begin scroll bar */
+::-webkit-scrollbar {
+    width: 15px;
+    opacity: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(45deg, rgba(89,69,69,1) 0%, rgba(129,91,91,1) 44%, rgba(158,118,118,1) 78%, rgba(255,248,234,1) 100%);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #594545;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9E7676;
+}
+
+::-moz-scrollbar-button, ::-webkit-scrollbar-button {
+    width: 0px;
+}
+/* End scroll bar */
+
+/* Begin format navigation bar */
+#nav {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 65px;
+    background-color: #9E7676;
+    opacity: 0.75;
+}
+
+#nav .btn {
+    height: 100%;
+    width: 130px;
+    float: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+#nav .btn:hover {
+    background-color: #594545;
+}
+
+#nav .tagName {
+    width: 100%;
+    padding: 18px 0;
+    font-size: 25px;
+    color: #fff;
+}
+/* End format navigation bar */
+
+/* Begin format header */
+#header {
+    position: relative;
+    background-image: url("./source/headerBackground.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+}
+
+#header-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* #header-picture:hover {
+
+} */
+
+/* Title and picture */
+#header-title {
+    display: block;
+    line-height: 100px;
+    font-family: Brush, Helvetica, sans-serif;
+    font-size: 110px;
+    color: #815B5B;
+    padding-top: 10px;
+}
+
+#header-content #header-pic-set {
+    display: block;
+    margin-top: 30px;
+    width: fit-content;
+    height: 338px;
+}
+
+#header-content #header-pic-set #header-picture {
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    height: 400px;
+    transform: translateX(101px);
+    border-radius: 200px;
+}
+
+#header-content #header-pic-set #S1rectangle {
+    background-color: #815B5B;
+    width: 600px;
+    height: 250px;
+    transform:translateY(70px);
+}
+
+/* Introduction paragraph */
+#header-content #header-paragraph {
+    text-align: center;
+    margin-top: 65px;
+}
+
+#header-content #header-paragraph #S1paragraph{
+    display: block;
+    font-size: 60px;
+    font-family: DancingLine, Arial, sans-serif, sans-serif;
+    line-height: 60px;
+}
+/* End format header */
+
+/* Begin bridge1 */
+#bridge1 {
+    background-image: url("./source/ribbon1Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bridge1-content {
+    height: inherit;
+}
+
+#bridge1 #bridge1-paragraph {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 20;
+    font-size: 45px;
+    font-style: italic;
+    line-height: 45px;
+    margin-block: 170px;
+}
+/* End bridge1 */
+
+/* Begin description */
+#describe {
+    background-color: #fff;
+    height: 1000px;
+}
+
+#describe-content {
+    height: 100%;
+    width: 100%;
+    padding-inline: 30px;
+}
+
+#describe-content #describe-pic1 {
+    position: absolute;
+    background-image: url("./source/describe-pic1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    float: right;
+    right: 0px;
+    bottom: 0px;
+}
+
+#describe-content #describe-pic2 {
+    position: absolute;
+    background-image: url("./source/describe-pic2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 330px;
+    height: 420px;
+    bottom: 0;
+    right: 0;
+}
+
+#describe-content #col-2a {
+    position: relative;   
+    float: left;
+    width: 100%;
+    height: 55%;
+}
+
+#describe-content #col-2b {
+    position: relative;   
+    float: left;
+    width: 100%;
+    height: 45%;
+}
+
+#describe-content #describe-pic3 {
+    position: absolute;
+    background-image: url("./source/describe-pic3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+    top: 0;
+    right: 0;
+}
+
+#describe-content #describe-pic4 {
+    position: absolute;
+    bottom: 0;
+    background-image: url("./source/describe-pic4.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 500px;
+}
+
+#describe-content #describe-header {
+    position: relative;
+    width: 500px;
+    height: 80px;
+}
+
+#describe-content #describe-header #describe-header-a {
+    position: absolute;
+    margin: 15px 10px 10px;
+    font-size: 100px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bolder;
+    color: #815B5B;
+    text-transform: uppercase;
+}
+
+#describe-content #describe-header #describe-header-b {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    z-index: 500;
+    width: 100%;
+    margin: 10px 10px;
+    font-size: 80px;
+    font-weight: lighter;
+    color: #fff;
+    font-family: DancingLine, Arial, sans-serif, sans-serif;
+}
+
+#describe-content  #describe-paragraph {
+    position: static;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin: 60px 25px 0 20px;
+    width: 650px;
+    height: fit-content;
+    text-align: justify;
+    font-size: 23px;
+}
+/* End description */
+
+/* Begin bridge2 */
+#bridge2 {
+    position: relative;
+}
+
+#bridge2 #bridge2-pic1,
+#bridge2 #bridge2-pic2,
+#bridge2 #bridge2-pic3 {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#bridge2 #bridge2-pic1 {
+    background-image: url("./source/bridge2Pic1.jpg");
+}
+
+#bridge2 #bridge2-pic2 {
+    background-image: url("./source/bridge2Pic2.jpg");
+}
+
+#bridge2 #bridge2-pic3 {
+    background-image: url("./source/bridge2Pic3.jpg");
+}
+/* End bridge2 */
+
+/* Begin memories */
+#memories {
+    background-color: #FFF8EA;
+    height: 900px;
+}
+
+#memories #memories-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-inline: 120px;
+}
+
+#memories #memories-pic1, 
+#memories #memories-pic2,
+#memories #memories-pic3,
+#memories #memories-pic4 {
+    height: 600px;
+    width: 300px;
+    position: absolute;
+    border-radius: 20px;
+}
+
+#memories #memories-pic1 {
+    background-image: url("./source/memoPic1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 20px;
+}
+
+#memories #memories-pic2 {
+    background-image: url("./source/memoPic2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0px;
+}
+
+#memories #memories-pic3 {
+    background-image: url("./source/memoPic3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 80px;
+}
+
+#memories #memories-pic4 {
+    background-image: url("./source/memoPic4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 40px;
+}
+
+#memories #memories-header {
+    position: absolute;
+    top: calc(50% - 83px);
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    font-size: 140px;
+    font-weight: lighter;
+    font-style: italic;
+    color: #fff;
+    font-family: DancingLine, Arial, sans-serif, sans-serif;
+}
+/* End memories */
+
+/* Begin bridge3 */
+#bridge3 {
+    background-image: url("./source/bridge3Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bridge3-content {
+    height: inherit;
+}
+
+#bridge3 #bridge3-paragraph {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 20;
+    font-size: 50px;
+    font-style: italic;
+    line-height: 60px;
+    margin-block: 100px;
+}
+/* End bridge3 */
+
+/* Begin confess */
+#confess {
+    width: 100%;
+    height: 900px;
+    background: #9E7676;
+}
+
+#confess #confess-content {
+    width: 100%;
+    height: 100%;
+    padding-inline: 60px;
+}
+
+
+#confess #confess-pic1,
+#confess #confess-pic2 {
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 400px;
+    margin: 0 15px;
+}
+
+#confess #confess-pic1 {
+    background-image: url("./source/confess-pic1.jpg");
+    right: 0;
+}
+
+#confess #confess-pic2 {
+    background-image: url("./source/confess-pic2.jpg");
+    left: 0;
+}
+
+#confess #confess-paragraph {
+    position: static;
+    font-family: DancingLine, Arial, sans-serif, sans-serif;
+    font-size: 40px;
+    color: #fff;
+    margin-inline: 15px;
+    width: 420.55px;
+    height: fit-content;
+    text-align: justify;
+}
+/* End confess */
+
+/* Begin conclude */
+#conclude {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    background-image: url("./source/concludeBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#conclude #thank-you {
+    position: absolute;
+    font-family: DancingLine, Arial, sans-serif, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    height: 60px;
+    top: 62px;
+    left: calc(50% - 450px);
+}
+/* End conclude */
